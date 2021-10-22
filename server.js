@@ -10,7 +10,6 @@ app.post("/", function(req,res){
 	var city = req.body.city;
 	const url = "https://api.openweathermap.org/data/2.5/weather?q="+ city + "&appid=9fa342d7f607bfd28b0238f970724e2b&units=metric";
     https.get(url, function(response){
-	console.log(response.statusCode);
 	response.on("data", function(data){
 		const weatherData = JSON.parse(data);
 		const temp = weatherData.main.temp;
